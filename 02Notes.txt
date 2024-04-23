@@ -1,0 +1,9 @@
+background ma j vido 6 ena upar test dynamic move thata rakhva ,ek project(portfolio) ma already 6 e copy karva
+
+className= hoi tya className karvu :completed
+
+professional font style add do 
+Togglemode add do 
+login and signup na background ma image add karvi
+
+after booking we have to give invoice in pdf

@@ -1,13 +1,475 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+}
+body {
+  font-family: "Rubik", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+}
+.call-accept-icon{
+  color: green;
+  font-size: 30px;
+}
+.call-decline-icon{
+  color: red;
+  font-size: 30px;
+}
+.root-icon{
+  color: #007BFF;
+  font-size: 22px;
+  display: inline-block;
+}
+.root-icon + input{
+  display: inline-block;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ------------------------SCROLLBAR STYLES-------------- */
+/* Width and height of the scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #6a62ff;
+  /* border-radius: 4px; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1421d3;
+}
+
+
+/*------------------------PRELOADER STYLES---------------*/
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* .loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+} */
+.loader {
+  background-image: url('./Img/PreloaderIphone.gif');
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+}
+
+/* @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} */
+
+
+
+/*-----------------------HEADER STYLES-----------------------*/
+.header-icon{
+  color: #007BFF;
+  font-size: 18px;
+  transition-duration: .3s;
+}
+#menu-icon{
+  color: #007BFF;
+  font-size: 40px;
+}
+.img-logo{
+  width: 200px;
+}
+.navbar-light .navbar-nav .nav-link {
+  transition: .2s;
+  color: rgb(0 0 0);
+  font-size: 17px;
+}
+.nav-item{
+  margin-top: 10px;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #007BFF;
+}
+.navbar-light .navbar-nav .nav-link:hover .header-icon{
+  color: black;
+}
+.dropdown-item:hover {
+  transition: .4s;
+  color: #007BFF;
+}
+/* ---------Header Hover----------*/
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px); /* Initially move the dropdown up */
+  animation: fadeInDown 0.3s ease forwards; /* Apply fadeInDown animation */
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px); /* Start above and transparent */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at normal position with full opacity */
+  }
+}
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+
+/*----------------------------HOME PAGE---------------------------------*/
+/* VideoBackground.css */
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 68vh;
+  overflow: hidden;
+}
+
+video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000c6;
+  z-index: 2;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 3; /* Ensure the text is above the gradient overlay */
+  padding: 0;
+  margin: 0;
+}
+
+/**-------------HOME-PARTNER-----------*/
+.partner-row{
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.card{
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+.card-body p{
+  font-size: 14px;
+  color: gray;
+}
+
+/*------------------------------ABOUT US------------------------*/
+.about-container .row-1 {
+  height: 300px;
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0), rgba(99, 102, 241, 0.6) 120%), url('./Img/about-hero1jpg.jpg');
+  background-size: cover; /* Adjust this as needed */
+  background-position: center; /* Adjust this as needed */
+}
+.about-container .row-2 p{
+  /* color: #595959; */
+  color: rgb(94, 93, 93);
+}
+.about-container .row-3{
+  background-image: url('./Img/about-bg2.jpg');
+  background-size: cover; /* Adjust this as needed */
+  background-position: center; /* Adjust this as needed */
+}
+
+
+
+/*----------------------CONTACT US---------------------*/
+
+.contact-form-container{
+  padding-bottom: 40px;
+  overflow: visible;
+  background-color: #f3f6ff;
+}
+.contact-form p{
+  color: #565973;
+}
+.contact-form i,.contact-form a{
+  color: #0d4ea6;
+}
+.contact-address ul{
+  color: #565973;
+}
+.contact-address ul i{
+  color: #0d4ea6;
+  font-size: 22px;
+}
+.img-div{
+  z-index: 2;
+}
+
+/*---------------------USER PROFILE-----------------------*/
+.user-profile-card {
+  width: 350px;
+  background-color: #efefef;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.image img {
+  transition: all 0.5s
+}
+
+.user-profile-card:hover .image img {
+  transform: scale(1.5)
+}
+
+.user-profile-card .card-btn {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%
+}
+
+.name {
+  font-size: 22px;
+  font-weight: bold
+}
+
+.idd {
+  font-size: 14px;
+  font-weight: 600
+}
+
+.idd1 {
+  font-size: 12px
+}
+
+.number {
+  font-size: 22px;
+  font-weight: bold
+}
+
+.follow {
+  font-size: 12px;
+  font-weight: 500;
+  color: #444444
+}
+
+.btn1 {
+  transition: .3s;
+  height: 40px;
+  width: 150px;
+  border: none;
+  background-color: #000;
+  color: #aeaeae;
+  font-size: 15px
+}
+
+.text span {
+  font-size: 13px;
+  color: #545454;
+  font-weight: 500
+}
+
+.icons i {
+  font-size: 19px
+}
+
+hr .new1 {
+  border: 1px solid
+}
+
+.join {
+  font-size: 14px;
+  color: #a0a0a0;
+  font-weight: bold
+}
+
+.date {
+  background-color: #ccc
+}
+
+/*-----------------------DASHBOARD-----------------------*/
+.sidebar {
+  /* width: 200px; Adjust the width as needed */
+  background-color: #dadadab0; 
+  padding: 20px 0;
+}
+
+.sidebar-item {
+  display: block;
+  padding: 10px 10px 10px 20px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+  position: relative; /* Add position relative */
+  overflow: hidden; /* Hide overflow to prevent background from showing outside element */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.sidebar-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%; /* Initially, start from outside the element */
+  width: 100%;
+  height: 100%;
+  background-color: #09153d; /* Matching color for hover background */
+  transition: left 0.3s; /* Transition for left property */
+  z-index: -1; /* Behind the content */
+}
+
+.sidebar-item:hover::before {
+  left: 0; /* Move to the right to cover the element */
+}
+
+.sidebar-item:hover {
+  text-decoration: none;
+  color: #f3f3f3; /* Matching color for hover text */
+}
+.sidebar-item:hover .header-icon{
+  color: #f3f3f3; /* Matching color for hover text */
+}
+
+.content {
+  flex-grow: 1;
+  /* padding: 20px; */
+  padding-top: 30px;
+
+}
+
+/* ---------------------TERMS AND CONDITION-------------- */
+.terms-container ol li{
+  margin: 15px 0;
+}
+/*-------------------FOOTER--------------*/
+.footer{
+  /* padding-top: 200px; */
+  background-color: #0a132b;
+}
+
+/* ------------CUSTOM BUTTON ANIMATION------------- */
+.custom-btn {
+  /* Button styles */
+  background-color: #0d6efd; /* Default button color */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.custom-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0) 80%);
+  transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+  border-radius: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+}
+
+.custom-btn:hover::before {
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+}
+
+.custom-btn:hover {
+  background-color: #0745a3; /* New button color on hover */
+  box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Add a subtle shadow on hover */
+}
+
+.custom-btn:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+.custom-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ----------------- DASHBOARD HOME PAGE TEXT ------------------ */
+.wave-text {
+  animation: wave 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.ship-info{
+  color: rgb(2, 121, 48);
+  font-size: 17px;
+}
+
+/* Add this CSS to your stylesheets */
+@keyframes shine {
+  0% {
+    color: #333;
+  }
+  50% {
+    color: #2680cf; /* Shining color */
+  }
+  100% {
+    color: #333;
+  }
+}
+
+.shine-animation {
+  animation-name: shine;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }

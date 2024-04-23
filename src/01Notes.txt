@@ -1,0 +1,30 @@
+>>> Json formatter
+>>> Ship Scheduling is not working
+>>> Clearing Local Storage after closing browser
+>>> User Edit table in Username
+
+11-Mar-2024
+-->modified table names
+
+10-feb-2024
+-->user profile page is pending
+-->user verification with special access
+
+29-jan-2024
+-->Cargo Data stored in React Obj but not recieving in Database
+
+26-Jan-2024
+-->Connected Database With Sender & Reciever
+-->Derived data to Dashboard
+
+23-Jan-2024
+-->Cargo Tracking module is incomplete
+-->Added Important Documents Module
+-->Addedd Refund Policy
+
+19-Jan-2024
+-->Completed entire booking component with icons
+-->Solved all warnings
+
+18-Jan-2024
+-->Help Center Component done but content not rendering in proper manner
